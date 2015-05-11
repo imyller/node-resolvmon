@@ -1,6 +1,7 @@
 node-resolvmon
 ==============
 [![Build Status](https://travis-ci.org/imyller/node-resolvmon.svg)](https://travis-ci.org/imyller/node-resolvmon)
+![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)
 
 Automatically updates DNS server configuration if `resolv.conf` changes.
 
