@@ -1,0 +1,30 @@
+{
+  "name": "resolvmon",
+  "version": "0.1.0",
+  "description": "Automatically updates DNS server configuration if resolv.conf changes",
+  "author": "Ilkka Myller <ilkka.myller@nodefield.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/imyller/node-resolvmon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imyller/node-resolvmon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imyller/node-resolvmon/issues"
+  },
+  "keywords": [
+    "resolv.conf",
+    "dns",
+    "monitor"
+  ],
+  "main": "lib/resolvmon.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "chai": "^2.3.0",
+    "temp": "^0.8.1"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  }
+}
