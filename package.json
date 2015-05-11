@@ -15,9 +15,13 @@
   "keywords": [
     "resolv.conf",
     "dns",
-    "monitor"
+    "monitor",
+    "watch"
   ],
   "main": "lib/resolvmon.js",
+  "engines": {
+    "node": ">= 0.8"
+  },
   "dependencies": {},
   "devDependencies": {
     "mocha": "^2.2.4",

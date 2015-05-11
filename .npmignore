@@ -9,3 +9,4 @@ examples
 .gitignore
 .editorconfig
 .travis.yml
+test
