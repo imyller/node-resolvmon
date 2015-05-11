@@ -3,5 +3,11 @@ node_js:
   - "0.8"
   - "0.10"
   - "0.12"
-  - "iojs-v1"
-  - "iojs-v2"
+  - "iojs-1"
+  - "iojs-2"
+os:
+  - linux
+  - osx
+notifications:
+  email:
+    - ilkka.myller@nodefield.com
