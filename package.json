@@ -20,13 +20,13 @@
   ],
   "main": "lib/resolvmon.js",
   "engines": {
-    "node": ">= 0.8"
+    "node": ">= 0.12"
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^2.2.4",
-    "chai": "^2.3.0",
-    "temp": "^0.8.1"
+    "mocha": "~2.2.4",
+    "chai": "~2.3.0",
+    "temp": "~0.8.1"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"

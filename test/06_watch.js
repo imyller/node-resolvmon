@@ -80,27 +80,36 @@ describe('resolvmon watch', function () {
 	it('detect resolv.conf delete', function (done) {
 
 		resolvmon.setPath(temporary_conf);
-		fs.writeFileSync(temporary_conf, "nameserver 127.0.0.11\nnameserver 127.0.0.22\n");
 
-		resolvmon.on('error', function (err) {
+		fs.writeFile(temporary_conf, "nameserver 127.0.0.11\nnameserver 127.0.0.22\n", function (err) {
+
 			expect(err).not.to.be.defined;
-			done(err);
-		});
 
-		resolvmon.on('update', function (nameservers) {
+			if (err) {
+				return done();
+			}
 
-			expect(nameservers).to.be.defined;
-			expect(nameservers).to.be.instanceof(Array);
-			expect(nameservers).to.eql([]);
+			resolvmon.on('error', function (err) {
+				expect(err).not.to.be.defined;
+				done(err);
+			});
 
-			done();
+			resolvmon.on('update', function (nameservers) {
 
-		});
+				expect(nameservers).to.be.defined;
+				expect(nameservers).to.be.instanceof(Array);
+				expect(nameservers).to.eql([]);
 
-		resolvmon.start();
+				done();
 
-		process.nextTick(function () {
-			fs.unlink(temporary_conf);
+			});
+
+			resolvmon.start();
+
+			process.nextTick(function () {
+				fs.unlinkSync(temporary_conf);
+			});
+
 		});
 
 	});
@@ -109,29 +118,37 @@ describe('resolvmon watch', function () {
 
 		resolvmon.setPath(temporary_conf);
 
-		fs.writeFileSync(temporary_conf, "nameserver 127.0.0.12\nnameserver 127.0.0.23");
+		fs.writeFile(temporary_conf, "nameserver 127.0.0.12\nnameserver 127.0.0.23", function (err) {
 
-		resolvmon.on('error', function (err) {
 			expect(err).not.to.be.defined;
-			done(err);
+
+			if (err) {
+				return done();
+			}
+
+			resolvmon.on('error', function (err) {
+				expect(err).not.to.be.defined;
+				done(err);
+			});
+
+			resolvmon.on('update', function (nameservers) {
+
+				expect(nameservers).to.be.defined;
+				expect(nameservers).to.be.instanceof(Array);
+				expect(nameservers).to.eql(['127.0.0.12', '127.0.0.23', '127.0.0.34', '127.0.0.45']);
+
+				done();
+
+			});
+
+			resolvmon.start();
+
+			process.nextTick(function () {
+				fs.appendFileSync(temporary_conf, "\nnameserver 127.0.0.34\nnameserver 127.0.0.45\n");
+			});
+
+
 		});
-
-		resolvmon.on('update', function (nameservers) {
-
-			expect(nameservers).to.be.defined;
-			expect(nameservers).to.be.instanceof(Array);
-			expect(nameservers).to.eql(['127.0.0.12', '127.0.0.23', '127.0.0.34', '127.0.0.45']);
-
-			done();
-
-		});
-
-		resolvmon.start();
-
-		process.nextTick(function () {
-			fs.appendFileSync(temporary_conf, "\nnameserver 127.0.0.34\nnameserver 127.0.0.45\n");
-		});
-
 
 	});
 
@@ -139,25 +156,33 @@ describe('resolvmon watch', function () {
 
 		resolvmon.setPath(temporary_conf);
 
-		fs.writeFileSync(temporary_conf, "nameserver 127.0.0.77\nnameserver 127.0.0.88\n");
+		fs.writeFile(temporary_conf, "nameserver 127.0.0.77\nnameserver 127.0.0.88\n", function (err) {
 
-		resolvmon.on('error', function (err) {
 			expect(err).not.to.be.defined;
-			done(err);
-		});
 
-		resolvmon.on('update', function (nameservers) {
+			if (err) {
+				return done();
+			}
 
-			expect(nameservers).to.be.defined;
-			expect(nameservers).to.be.instanceof(Array);
-			expect(nameservers).to.eql(['127.0.0.100', '127.0.0.200']);
-			done();
-		});
+			resolvmon.on('error', function (err) {
+				expect(err).not.to.be.defined;
+				done(err);
+			});
 
-		resolvmon.start();
+			resolvmon.on('update', function (nameservers) {
 
-		process.nextTick(function () {
-			fs.writeFileSync(temporary_conf, "nameserver 127.0.0.100\nnameserver 127.0.0.200");
+				expect(nameservers).to.be.defined;
+				expect(nameservers).to.be.instanceof(Array);
+				expect(nameservers).to.eql(['127.0.0.100', '127.0.0.200']);
+				done();
+			});
+
+			resolvmon.start();
+
+			process.nextTick(function () {
+				fs.writeFileSync(temporary_conf, "nameserver 127.0.0.100\nnameserver 127.0.0.200");
+			});
+
 		});
 
 	});
@@ -190,7 +215,7 @@ describe('resolvmon watch', function () {
 		after(function () {
 
 			try {
-				fs.unlink(temporary_conf + '.renamed');
+				fs.unlinkSync(temporary_conf + '.renamed');
 			} catch (ex) {
 			}
 
@@ -226,7 +251,7 @@ describe('resolvmon watch', function () {
 		after(function () {
 
 			try {
-				fs.unlink(temporary_conf + '.renamed');
+				fs.unlinkSync(temporary_conf + '.renamed');
 			} catch (ex) {
 			}
 

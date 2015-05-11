@@ -12,7 +12,7 @@ Detects if `resolv.conf` is created, deleted, appended, modified or renamed.
 Node Compatibility
 ---------------------
 
-Supports Node.js v0.8.0+ and io.js v1.0.0+
+Supports Node.js v0.12.0+ and io.js v1.0.0+
 
 Please let me know if you have problems running it on a later version of Node or
 have platform-specific problems.
