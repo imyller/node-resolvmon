@@ -1,5 +1,6 @@
 node-resolvmon
 ==============
+[![Build Status](https://travis-ci.org/imyller/node-resolvmon.svg)](https://travis-ci.org/imyller/node-resolvmon)
 
 Automatically updates DNS server configuration if `resolv.conf` changes.
 
