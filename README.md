@@ -2,6 +2,7 @@ node-resolvmon
 ==============
 [![Build Status](https://travis-ci.org/imyller/node-resolvmon.svg)](https://travis-ci.org/imyller/node-resolvmon)
 ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=imyller&url=https://github.com/imyller/node-resolvmon&title=node-resolvmon&language=&tags=github&category=software)
 
 Automatically updates DNS server configuration if `resolv.conf` changes.
 
