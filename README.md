@@ -4,6 +4,9 @@ node-resolvmon
 ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=imyller&url=https://github.com/imyller/node-resolvmon&title=node-resolvmon&language=&tags=github&category=software)
 
+[![NPM](https://nodei.co/npm/resolvmon.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/resolvmon/)
+[![NPM](https://nodei.co/npm-dl/resolvmon.png?months=6&height=3)](https://nodei.co/npm-dl/resolvmon/)
+
 Automatically updates DNS server configuration if `resolv.conf` changes.
 
 Watches `/etc/resolv.conf` (or similar) for changes and updates Node DNS servers accordingly.
