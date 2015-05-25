@@ -7,15 +7,27 @@ node-resolvmon
 [![NPM](https://nodei.co/npm/resolvmon.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/resolvmon/)
 [![NPM](https://nodei.co/npm-dl/resolvmon.png?months=6&height=3)](https://nodei.co/npm-dl/resolvmon/)
 
-Automatically updates DNS server configuration if `resolv.conf` changes.
+Automatically updates Node DNS resolver configuration if `resolv.conf` changes.
 
-Watches `/etc/resolv.conf` (or similar) for changes and updates Node DNS servers accordingly.
-Detects if `resolv.conf` is created, deleted, appended, modified or renamed.
+Watches `/etc/resolv.conf` (or similar) for changes and updates Node DNS resolver accordingly.
+Detects if `resolv.conf` is created, deleted, renamed or modified.
+
+Why?
+----
+
+Current versions of Node.js or io.js do not update their DNS resolver configuration after application has been started.
+This is due to DNS client library (`c-ares`) lacking support for reinitialization or monitoring of system setting changes.
+
+If the system DNS resolver is unconfigured at the time of application startup or the configuration is modified afterwards, Node engine does not keep up with the changes.
+
+This module allows monitoring of `/etc/resolv.conf` file and updates the runtime DNS resolver configuration of the Node application without restarting it.
 
 Node Compatibility
 ---------------------
 
-Supports Node.js v0.12.0+ and io.js v1.0.0+
+Supports Node.js v`0.12.0+` and io.js v`1.0.0+`
+
+Node.js version v`0.10` or earlier are not supported due to the lack of `dns.setServers()` function.
 
 Please let me know if you have problems running it on a later version of Node or
 have platform-specific problems.
@@ -62,7 +74,7 @@ resolvmon.on('error', function (err) {
 // listen for update events
 
 resolvmon.on('update', function (nameservers) {
-	console.log(JSON.stringify(nameservers)));
+	console.dir(nameservers);
 });
 
 // trigger manual update
@@ -97,5 +109,5 @@ pull-requests!
 Copyright
 ---------
 
-Copyright (c) 2015 Ilkka Myller. This software is licensed
+Copyright 2015 Ilkka Myller. This software is licensed
 under the MIT License, see `LICENSE` for details.
