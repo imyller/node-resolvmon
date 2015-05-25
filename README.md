@@ -25,9 +25,9 @@ This module allows monitoring of `/etc/resolv.conf` file and updates the runtime
 Node Compatibility
 ---------------------
 
-Supports Node.js v`0.12.0+` and io.js v`1.0.0+`
+Supports Node.js v0.12.0+ and io.js v1.0.0+
 
-Node.js version v`0.10` or earlier are not supported due to the lack of `dns.setServers()` function.
+Node.js version v0.10 or earlier are not supported due to the lack of `dns.setServers()` function.
 
 Please let me know if you have problems running it on a later version of Node or
 have platform-specific problems.
@@ -35,13 +35,13 @@ have platform-specific problems.
 Installation
 ------------
 
-Install it using [npm](http://github.com/isaacs/npm):
+Install `resolvmon` using [npm](http://github.com/isaacs/npm):
 
 ```sh
 $ npm install resolvmon
 ```
 
-Or get it directly from:
+Or get `resolvmon` directly from:
 https://github.com/imyller/node-resolvmon
 
 Synopsis
