@@ -1,7 +1,7 @@
 {
   "name": "resolvmon",
   "version": "0.1.0",
-  "description": "Automatically updates DNS server configuration if resolv.conf changes",
+  "description": "Automatically updates Node DNS resolver configuration if resolv.conf changes",
   "author": "Ilkka Myller <ilkka.myller@nodefield.com>",
   "license": "MIT",
   "homepage": "https://github.com/imyller/node-resolvmon",
