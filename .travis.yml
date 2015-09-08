@@ -3,6 +3,7 @@ node_js:
   - "0.12"
   - "iojs-1"
   - "iojs-2"
+  - "iojs-3"
 notifications:
   email:
     - ilkka.myller@nodefield.com
