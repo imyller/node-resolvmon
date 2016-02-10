@@ -109,5 +109,5 @@ pull-requests!
 Copyright
 ---------
 
-Copyright 2015 Ilkka Myller. This software is licensed
+Copyright 2015-2016 Ilkka Myller. This software is licensed
 under the MIT License, see `LICENSE` for details.
