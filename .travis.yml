@@ -1,9 +1,12 @@
-language: node_js 
+language: node_js
 node_js:
-  - "0.12"
-  - "iojs-1"
-  - "iojs-2"
-  - "iojs-3"
-  - "4"
-  - "5"
-  - "6"
+- '0.12'
+- iojs-1
+- iojs-2
+- iojs-3
+- '4'
+- '5'
+- '6'
+notifications:
+  slack:
+    secure: vISaSRso19LjNtX22xhiN+q1Dn3oIWbhyOOW9MTpRAN4yiOvusVKXDMO9NGmLYs0zbS7onG+kvO1CnV+QUeZd+WmwFzt3icSXgB/oxtLw6LsTNJ7h3+ViESurnfhS95Lg80a2S1BrzgMYWYOhI4K9iF6yNIjchMu/UVXRUm0iSeL4fMThJsICIvIebxkgkXhxI+XVW0IxKTycz2G8LH1keo6aLnGOCKY+AmQxlBRMIHfpEQKjCZPnBDkFdTqk/QqDJ/AL+I/2ecbBtTw4HKPwgu+xeIGi+ovvKKO78RMvJ5nAGxshEeV0kYRit1tWE7UDcC8vLWziiaYyEY3c4qRqqnccWyRvkiw+xEzfoIRXh5yR0FUBeKZyEUSIBkR3XxpEs6ZRWw3GfRy6hk1R48QvNI/BUuJiy3UG108joz1+/EOo5pkvhBYo+x43iiRGJZwaRNW0eMp6s0PKl9/NBtFYGTGlv1AdtI6ONAKDecyFt7Nao4/i/WuYZUyUxS6MGhboD8nEDuV6/f9pFEMf6HNDhH/5ATT1obto2jOgWb096T6V3n4IyeeGEHnfVUBEU6AFPe6QJwThc/0bn6Hltfee6xhcm8MzFlwG/1DdJgpvGZIqyrKnoOisTuE0Ck5GhgP9wRzfvHiV3kF1b0Xp2QzL4kbwf3pzM22jKjomZYi4bo=
